@@ -18,7 +18,7 @@ function createInvoice() {
     subtotal = subtotal.toFixed(2);
     let tax = 0.07 * subtotal;
     tax = tax.toFixed(2);
-    let total = subtotal + tax;
+    let total = parseFloat(subtotal) + parseFloat(tax);
     total = total.toFixed(2);
     let newWindow = window.open();
     newWindow.document.write(`
@@ -95,18 +95,4 @@ function createInvoice() {
         </body>
         </html>
     `);
-    /*let newWindow = window.open();
-    newWindow.document.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="invoice-style.css">
-            <title>Customer Invoice</title>
-        </head>
-        <body>
-        <p>Test</p>
-        </body>
-    `)*/
 }
